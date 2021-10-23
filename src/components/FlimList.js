@@ -9,9 +9,9 @@ const FilmList = ({films, onFilmSelected}) => {
     }
 
     const filmOptions = films.map((film, index) => {
-        return <div id="each-film" value={index} key={index} >
+        return <div id="each-film" key={index}>
                     <img src={film.movie_banner} width="200" alt="film banner"/>
-                    <li onClick={handleFilmSelect}>{film.title}</li>
+                    <li value={index} onClick={handleFilmSelect}>{film.title}</li>
                     <button>Watch List</button>
                     <button>Seen List</button>
                 </div>
