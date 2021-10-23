@@ -2,12 +2,15 @@ import React, {useState, useEffect} from 'react';
 import FilmList from '../components/FlimList';
 import SeenList from '../components/SeenList';
 import WatchList from '../components/WatchList';
+import FilmDetail from '../components/FilmDetail';
+
 import './container.css'
 
 const Container = () => {
 
-    const [films, setFilms] = useState([])
-    const [people, setPeople] = useState([])
+    const [films, setFilms] = useState([]);
+    const [people, setPeople] = useState([]);
+    const [selectedFilm, setSelectedFilm] = useState([]);
     // const [species, setSpecies] = useState([])
 
     useEffect(() => {
@@ -30,11 +33,18 @@ const Container = () => {
         .then(people => setPeople(people))
     }
 
+    const onFilmSelected = (film) => {
+        setSelectedFilm(film)
+        console.log("image clicked")
+    } 
+
     return (
         <div id="container-grid">
-            <FilmList films={films}/>
+            <FilmList films={films} onFilmSelected={onFilmSelected}/>
             <WatchList />
             <SeenList />
+            {/* {selectedFilm ? <FilmDetail selectedFilm={selectedFilm}/> :null} */}
+            {/* <FilmDetail selectedFilm={selectedFilm}/> */}
         </div>
     )
 }

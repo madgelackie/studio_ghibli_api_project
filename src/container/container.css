@@ -12,6 +12,12 @@
 
 #each-film > li {
     list-style: none;
+    padding: 10px;
+}
+
+#each-film > li:hover {
+    color:slateblue;
+    font-size: large;
 }
 
 #watch-list {
@@ -24,11 +30,16 @@
     grid-area: seen-list;
 }
 
+#film-detail {
+    background-color: khaki;
+    grid-area: film-detail;
+}
+
 #container-grid {
     display: grid;
     grid-template-areas:
-        'main main'
-        'watch-list seen-list';
-    grid-template-rows: 7fr 3fr;
+        'main main main'
+        'watch-list seen-list film-detail';
+    grid-template-rows: 3fr 3fr 3fr;
     
 }
