@@ -21,6 +21,8 @@
 }
 
 #watch-list {
+    margin-top: 15px;
+    padding: 10px;
     background-color: cadetblue;
     grid-area: watch-list;
 }

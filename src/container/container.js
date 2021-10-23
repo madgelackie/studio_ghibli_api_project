@@ -52,7 +52,7 @@ const Container = () => {
     return (
         <div id="container-grid">
             <FilmList films={films} onFilmSelected={onFilmSelected} addToWatchList={addToWatchList}/>
-            {/* {watchList ? <WatchList watchList={watchList}/>:null} */}
+            {watchList ? <WatchList watchList={watchList}/>:null}
             <SeenList />
             <FilmDetail selectedFilm={selectedFilm} />
             {/* {/* <FilmDetail selectedFilm={selectedFilm}/>/} */}
