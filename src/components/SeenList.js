@@ -1,9 +1,19 @@
 import React from 'react';
 
-const SeenList = () => {
+const SeenList = ({seenList}) => {
     
+    const seenListDetails = seenList.map((film, index) => {
+        return  <li key={index}>{film.title}</li>
+                
+    })
+
     return (
-        <p id="seen-list">seen list</p>
+        <div id="seen-list">
+            <h3>Seen List:</h3>
+            <ul>
+                {seenListDetails}
+            </ul>
+        </div>
     )
 }
 

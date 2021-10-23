@@ -12,6 +12,7 @@ const Container = () => {
     const [people, setPeople] = useState([]);
     const [selectedFilm, setSelectedFilm] = useState([]);
     const [watchList, setWatchList] = useState([]);
+    const [seenList, setSeenList] = useState([]);    
     // const [species, setSpecies] = useState([])
 
     useEffect(() => {
@@ -49,11 +50,16 @@ const Container = () => {
         setWatchList(updatedWatchList);
     }
 
+    const addToSeenList = (film) => {
+        const updatedSeenList = [...seenList, film]
+        setSeenList(updatedSeenList);
+    }
+
     return (
         <div id="container-grid">
-            <FilmList films={films} onFilmSelected={onFilmSelected} addToWatchList={addToWatchList}/>
+            <FilmList films={films} onFilmSelected={onFilmSelected} addToWatchList={addToWatchList} addToSeenList={addToSeenList}/>
             {watchList ? <WatchList watchList={watchList}/>:null}
-            <SeenList />
+            {seenList ? <SeenList seenList={seenList}/>:null}
             <FilmDetail selectedFilm={selectedFilm} />
             {/* {/* <FilmDetail selectedFilm={selectedFilm}/>/} */}
         </div>

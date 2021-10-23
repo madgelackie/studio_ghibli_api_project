@@ -1,6 +1,6 @@
 import React from 'react';
 
-const FilmList = ({films, onFilmSelected, addToWatchList}) => {
+const FilmList = ({films, onFilmSelected, addToWatchList, addToSeenList}) => {
     
     const handleFilmSelect = (event) => {
         const chosenFilm = films[event.target.value];
@@ -14,9 +14,15 @@ const FilmList = ({films, onFilmSelected, addToWatchList}) => {
     // }
 
     const handleWatchSelect = (event) => {
-        const filmToAdd = films[event.target.value]
-        console.log("watch list clicked")
+        console.log("watch button clicked")
+        const filmToAdd = films[event.target.value];
         addToWatchList(filmToAdd);
+    }
+
+    const handleSeenSelect = (event) => {
+        console.log("seen button clicked")
+        const filmToAddSeen = films[event.target.value];        
+        addToSeenList(filmToAddSeen);
     }
 
     const filmOptions = films.map((film, index) => {
@@ -24,7 +30,7 @@ const FilmList = ({films, onFilmSelected, addToWatchList}) => {
                     <img src={film.movie_banner} width="200" alt="scene from film"/>
                     <li value={index} onClick={handleFilmSelect}>{film.title}</li>
                     <button value={index} onClick={handleWatchSelect}>Watch List</button>
-                    <button>Seen List</button>
+                    <button value={index} onClick={handleSeenSelect}>Seen List</button>
                 </div>
     })
 
