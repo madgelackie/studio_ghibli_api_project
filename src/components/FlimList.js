@@ -13,15 +13,17 @@ const FilmList = ({films, onFilmSelected, addToWatchList}) => {
     //     // onWatchSelected(watchFilm)
     // }
 
-    const handleWatchSelect = () => {
-        addToWatchList();
+    const handleWatchSelect = (event) => {
+        const filmToAdd = films[event.target.value]
+        console.log("watch list clicked")
+        addToWatchList(filmToAdd);
     }
 
     const filmOptions = films.map((film, index) => {
         return <div id="each-film" key={index}>
                     <img src={film.movie_banner} width="200" alt="scene from film"/>
                     <li value={index} onClick={handleFilmSelect}>{film.title}</li>
-                    <button onClick={handleWatchSelect}>Watch List</button>
+                    <button value={index} onClick={handleWatchSelect}>Watch List</button>
                     <button>Seen List</button>
                 </div>
     })

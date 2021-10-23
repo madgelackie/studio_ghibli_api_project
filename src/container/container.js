@@ -44,15 +44,15 @@ const Container = () => {
     //     setWatchList(updateWatchList)
     // }
 
-    const addToWatchList = () => {
-        const updatedWatchList = [...watchList, selectedFilm]
+    const addToWatchList = (film) => {
+        const updatedWatchList = [...watchList, film]
         setWatchList(updatedWatchList);
     }
 
     return (
         <div id="container-grid">
             <FilmList films={films} onFilmSelected={onFilmSelected} addToWatchList={addToWatchList}/>
-            <WatchList />
+            {/* {watchList ? <WatchList watchList={watchList}/>:null} */}
             <SeenList />
             <FilmDetail selectedFilm={selectedFilm} />
             {/* {/* <FilmDetail selectedFilm={selectedFilm}/>/} */}

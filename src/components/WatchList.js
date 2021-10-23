@@ -1,9 +1,15 @@
 import React from 'react';
 
-const WatchList = () => {
+const WatchList = ({watchList}) => {
     
+    const watchListDetails = watchList.map((film, index) => {
+        return  <div key={index}>
+                    <li>{film.title}</li>
+                </div>
+    })
+
     return (
-        <p id="watch-list">watch list</p>
+        <li>{watchListDetails}</li>
     )
 }
 
