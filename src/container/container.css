@@ -1,0 +1,34 @@
+#main {
+    display: flex;
+    flex-wrap: wrap;
+    background-color:beige;
+    grid-area: main;
+}
+
+#each-film {
+    padding: 15px;
+    text-decoration: none;
+}
+
+#each-film > li {
+    list-style: none;
+}
+
+#watch-list {
+    background-color: cadetblue;
+    grid-area: watch-list;
+}
+
+#seen-list {
+    background-color: hotpink;
+    grid-area: seen-list;
+}
+
+#container-grid {
+    display: grid;
+    grid-template-areas:
+        'main main'
+        'watch-list seen-list';
+    grid-template-rows: 7fr 3fr;
+    
+}
