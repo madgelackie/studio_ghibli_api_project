@@ -1,21 +1,16 @@
-// import React from 'react';
+import React from 'react';
 
-// const FilmDetail = ({selectedFilm}) => {
- 
+const FilmDetail = ({selectedFilm}) => {
 
-//     const selectedFilmDetail = selectedFilm.map((film, index) => {
-//         return <ListItem film=
-//     })
-//     return (
-//             <p>{selectedFilm}</p>
-//                 // <div>
-//                 //     <h3>{selectedFilm.title}</h3>
-//                 //     <ul>
-//                 //         <li>{selectedFilm.release_date} {selectedFilm.director}</li>
-//                 //         <li>{selectedFilm.description}</li>
-//                 //     </ul>
-//                 // </div>
-//     )
-// }
+    return (
+            <div id="film-detail">
+                <h3>Film Details:</h3>
+                {/* {!selectedFilm && <h2>boop</h2>} */}
+                {selectedFilm ? <h4>{selectedFilm.title} </h4>: null}
+                {selectedFilm ? <p>{selectedFilm.director}  {selectedFilm.release_date}</p>: null}
+                {selectedFilm ? <p>{selectedFilm.description}</p>: null}
+            </div>
+    )
+}
 
-// export default FilmDetail;
+export default FilmDetail;

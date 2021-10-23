@@ -11,6 +11,7 @@ const Container = () => {
     const [films, setFilms] = useState([]);
     const [people, setPeople] = useState([]);
     const [selectedFilm, setSelectedFilm] = useState([]);
+    const [watchList, setWatchList] = useState([]);
     // const [species, setSpecies] = useState([])
 
     useEffect(() => {
@@ -38,13 +39,23 @@ const Container = () => {
         console.log("image clicked")
     } 
 
+    // const onWatchSelected = (film) => {
+    //     const updateWatchList = [...watchList, film];
+    //     setWatchList(updateWatchList)
+    // }
+
+    const addToWatchList = () => {
+        const updatedWatchList = [...watchList, selectedFilm]
+        setWatchList(updatedWatchList);
+    }
+
     return (
         <div id="container-grid">
-            <FilmList films={films} onFilmSelected={onFilmSelected}/>
+            <FilmList films={films} onFilmSelected={onFilmSelected} addToWatchList={addToWatchList}/>
             <WatchList />
             <SeenList />
-            {/* {selectedFilm ? <FilmDetail selectedFilm={selectedFilm}/> :null} */}
-            {/* <FilmDetail selectedFilm={selectedFilm}/> */}
+            <FilmDetail selectedFilm={selectedFilm} />
+            {/* {/* <FilmDetail selectedFilm={selectedFilm}/>/} */}
         </div>
     )
 }

@@ -31,6 +31,8 @@
 }
 
 #film-detail {
+    margin-top: 15px;
+    padding: 10px;
     background-color: khaki;
     grid-area: film-detail;
 }
