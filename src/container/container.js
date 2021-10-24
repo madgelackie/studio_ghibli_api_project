@@ -23,7 +23,7 @@ const Container = () => {
         fetch("https://ghibliapi.herokuapp.com/films")
         .then(response => response.json())
         .then(films => {
-            const filmPromises = films.map((film) => {
+            const filmPromises = films.people.map((film) => {
                 return fetch("https://ghibliapi.herokuapp.com/people")
                 .then(response => response.json())
             })
