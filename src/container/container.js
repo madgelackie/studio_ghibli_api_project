@@ -35,15 +35,14 @@ const Container = () => {
         .then(people => setPeople(people))
     }
 
+    const filmsWithPeopleDetail = (films, people) => {
+        filmsWithPeopleDetail
+    }
+
     const onFilmSelected = (film) => {
         setSelectedFilm(film)
         console.log("image clicked")
     } 
-
-    // const onWatchSelected = (film) => {
-    //     const updateWatchList = [...watchList, film];
-    //     setWatchList(updateWatchList)
-    // }
 
     const addToWatchList = (film) => {
         const updatedWatchList = [...watchList, film]

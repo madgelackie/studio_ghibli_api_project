@@ -35,7 +35,6 @@
 }
 
 #film-detail {
-    margin-top: 15px;
     padding: 10px;
     background-color: khaki;
     grid-area: film-detail;
@@ -44,8 +43,10 @@
 #container-grid {
     display: grid;
     grid-template-areas:
-        'main main main'
-        'watch-list seen-list film-detail';
-    grid-template-rows: 3fr 3fr 3fr;
+        'main main film-detail'
+        'main main watch-list'
+        'main main seen-list';
+    grid-template-rows: 2.5fr 3fr 3fr;
+    grid-template-columns: 3fr 3fr 3fr;
     
 }

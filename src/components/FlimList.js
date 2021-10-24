@@ -27,7 +27,7 @@ const FilmList = ({films, onFilmSelected, addToWatchList, addToSeenList}) => {
 
     const filmOptions = films.map((film, index) => {
         return <div id="each-film" key={index}>
-                    <img src={film.movie_banner} width="200" alt="scene from film"/>
+                    <img value={index} src={film.movie_banner} width="200" alt="scene from film"/>
                     <li value={index} onClick={handleFilmSelect}>{film.title}</li>
                     <button value={index} onClick={handleWatchSelect}>Watch List</button>
                     <button value={index} onClick={handleSeenSelect}>Seen List</button>
