@@ -7,6 +7,8 @@ const WatchList = ({watchList}) => {
                 
     })
 
+    
+
     return (
         <div id="watch-list">
             <h3>Watch List:</h3>

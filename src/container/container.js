@@ -90,7 +90,15 @@ const Container = () => {
     const addToSeenList = (film) => {
         const updatedSeenList = [...seenList, film]
         setSeenList(updatedSeenList);
-    }
+        // const removeFromWatchList = watchList.filter(film => film.title === )
+        }
+    
+
+    // const removeFromWatchList =  (seenList) => {seenList.title === watchList.title
+    // const index = array.indexOf(5);
+    // if (index > -1) {
+    //   array.splice(index, 1);
+    // }
 
     return (
         <div id="container-grid">

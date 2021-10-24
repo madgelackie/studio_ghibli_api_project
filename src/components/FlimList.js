@@ -8,13 +8,11 @@ const FilmList = ({films, onFilmSelected, addToWatchList, addToSeenList}) => {
     }
 
     const handleWatchSelect = (event) => {
-        console.log("watch button clicked")
         const filmToAdd = films[event.target.value];
         addToWatchList(filmToAdd);
     }
 
     const handleSeenSelect = (event) => {
-        console.log("seen button clicked")
         const filmToAddSeen = films[event.target.value];        
         addToSeenList(filmToAddSeen);
     }
