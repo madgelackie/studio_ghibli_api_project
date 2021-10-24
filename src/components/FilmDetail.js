@@ -2,6 +2,13 @@ import React from 'react';
 
 const FilmDetail = ({selectedFilm}) => {
 
+// const peopleInFilmDetail = peopleInFilm.map((person, index) => {
+//     return <div key={index}>
+//         <li>{person.name}</li>
+//     </div>
+// })
+
+
     return (
             <div id="film-detail">
                 <h3>Film Details:</h3>
@@ -9,6 +16,8 @@ const FilmDetail = ({selectedFilm}) => {
                 {selectedFilm ? <h4>{selectedFilm.title} </h4>: null}
                 {selectedFilm ? <p>{selectedFilm.director}  {selectedFilm.release_date}</p>: null}
                 {selectedFilm ? <p>{selectedFilm.description}</p>: null}
+                {/* <h3>Characters:</h3> */}
+                {/* {selectedFilm ? <ul>{peopleInFilmDetail}</ul>: null} */}
             </div>
     )
 }

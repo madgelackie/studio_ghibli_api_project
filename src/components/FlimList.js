@@ -7,12 +7,6 @@ const FilmList = ({films, onFilmSelected, addToWatchList, addToSeenList}) => {
         onFilmSelected(chosenFilm)
     }
 
-    // const handleWatchSelect = (event) => {
-    //     const watchFilm = films[event.target.value];
-    //     console.log('click worked')
-    //     // onWatchSelected(watchFilm)
-    // }
-
     const handleWatchSelect = (event) => {
         console.log("watch button clicked")
         const filmToAdd = films[event.target.value];

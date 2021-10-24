@@ -10,10 +10,12 @@ const Container = () => {
 
     const [films, setFilms] = useState([]);
     const [people, setPeople] = useState([]);
+    const [species, setSpecies] = useState([]);
     const [selectedFilm, setSelectedFilm] = useState([]);
     const [watchList, setWatchList] = useState([]);
-    const [seenList, setSeenList] = useState([]);    
-    // const [species, setSpecies] = useState([])
+    const [seenList, setSeenList] = useState([]);   
+    const [peopleInFilm, setPeopleInFilm] = useState([]);
+    
 
     useEffect(() => {
         fetchFilms();
@@ -21,6 +23,10 @@ const Container = () => {
 
     useEffect(() => {
         fetchPeople();
+    }, [])
+
+    useEffect(() => {
+        fetchSpecies();
     }, [])
 
     const fetchFilms = () => {
@@ -35,9 +41,34 @@ const Container = () => {
         .then(people => setPeople(people))
     }
 
-    const filmsWithPeopleDetail = (films, people) => {
-        filmsWithPeopleDetail
+    const fetchSpecies = () => {
+        fetch("https://ghibliapi.herokuapp.com/species")
+        .then(response => response.json())
+        .then(species => setSpecies(species))
     }
+
+// this function works to return people in films but creates an infinte re-render if i set it as state and use as props and pass through to filmDetail.  
+const peopleInFilms = people.filter(person => person.films[0] === selectedFilm.url)
+console.log(peopleInFilms)
+    
+
+// const peopleWithSpeciesDetail = (species, people) => {
+    //     const peopleWithSpecies = people.map(() => {
+    //         people.species === "https://ghibliapi.herokuapp.com/species/<speciesid>"
+
+    //         species.name
+    //     })
+
+    // }
+
+// const experiment = people.find(person => person.id === "267649ac-fb1b-11eb-9a03-0242ac130003")
+// console.log(experiment.species)
+
+// const experiment = people.filter(function (person) 
+//     {person.films.includes ("https://ghibliapi.herokuapp.com/films/dc2e6bd1-8156-4886-adff-b39e6043af0c")})
+// console.log(experiment)
+
+// const newPeopleList = people.map(person => person.species = species.find(species => species.url === person.species))
 
     const onFilmSelected = (film) => {
         setSelectedFilm(film)
@@ -59,8 +90,7 @@ const Container = () => {
             <FilmList films={films} onFilmSelected={onFilmSelected} addToWatchList={addToWatchList} addToSeenList={addToSeenList}/>
             {watchList ? <WatchList watchList={watchList}/>:null}
             {seenList ? <SeenList seenList={seenList}/>:null}
-            <FilmDetail selectedFilm={selectedFilm} />
-            {/* {/* <FilmDetail selectedFilm={selectedFilm}/>/} */}
+            <FilmDetail selectedFilm={selectedFilm} people={people}/>
         </div>
     )
 }
