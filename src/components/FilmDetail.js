@@ -1,13 +1,15 @@
 import React from 'react';
 
-const FilmDetail = ({selectedFilm}) => {
+const FilmDetail = ({selectedFilm, people}) => {
 
-// const peopleInFilmDetail = peopleInFilm.map((person, index) => {
-//     return <div key={index}>
-//         <li>{person.name}</li>
-//     </div>
-// })
 
+    const peopleInFilms = people.filter(person => person.films[0] === selectedFilm.url)
+    
+    const peopleInFilmDetail = peopleInFilms.map((person, index) => {
+        return <div key={index}>
+        <li>{person.name}</li>
+        </div>
+})
 
     return (
             <div id="film-detail">
@@ -17,7 +19,7 @@ const FilmDetail = ({selectedFilm}) => {
                 {selectedFilm ? <p>{selectedFilm.director}  {selectedFilm.release_date}</p>: null}
                 {selectedFilm ? <p>{selectedFilm.description}</p>: null}
                 {/* <h3>Characters:</h3> */}
-                {/* {selectedFilm ? <ul>{peopleInFilmDetail}</ul>: null} */}
+                {selectedFilm ? <ul>{peopleInFilmDetail}</ul>: null}
             </div>
     )
 }

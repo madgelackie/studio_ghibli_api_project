@@ -14,7 +14,7 @@ const Container = () => {
     const [selectedFilm, setSelectedFilm] = useState([]);
     const [watchList, setWatchList] = useState([]);
     const [seenList, setSeenList] = useState([]);   
-    const [peopleInFilm, setPeopleInFilm] = useState([]);
+    // const [peopleInFilm, setPeopleInFilm] = useState([]);
     
 
     useEffect(() => {
@@ -48,8 +48,16 @@ const Container = () => {
     }
 
 // this function works to return people in films but creates an infinte re-render if i set it as state and use as props and pass through to filmDetail.  
-const peopleInFilms = people.filter(person => person.films[0] === selectedFilm.url)
-console.log(peopleInFilms)
+// const peopleInFilms = people.filter(person => person.films[0] === selectedFilm.url)
+// console.log(peopleInFilms)
+
+// This makes shorter people objects, with fewer key:value pairs.
+// const newPeopleObject = people.map((person) => {
+//     return ({id:person.id, name:person.name, films:person.films})
+// })
+
+
+
     
 
 // const peopleWithSpeciesDetail = (species, people) => {
@@ -72,7 +80,6 @@ console.log(peopleInFilms)
 
     const onFilmSelected = (film) => {
         setSelectedFilm(film)
-        console.log("image clicked")
     } 
 
     const addToWatchList = (film) => {
