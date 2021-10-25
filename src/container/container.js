@@ -89,10 +89,23 @@ const Container = () => {
 
     const addToSeenList = (film) => {
         const updatedSeenList = [...seenList, film]
+        const seenObjectID = film.id
         setSeenList(updatedSeenList);
-        // const removeFromWatchList = watchList.filter(film => film.title === )
+        const filteredWatchArray = watchList.filter(watchFilm => watchFilm.id !== seenObjectID)
+        setWatchList(filteredWatchArray)
         }
+
     
+    // To remove from watchlist:
+    // 
+    // 1. First, take the Seen film and extract id into variable.  
+    // Then find the object in watchlist array which matches the object being sought(i.e just added to seenList)
+        // 2. find that objects index Number
+        // 3. use .splice(index, 1) to remove it.
+        // 4. re-render watchList component (so us setWatchList)
+
+        
+    // const seenObject = 
 
     // const removeFromWatchList =  (seenList) => {seenList.title === watchList.title
     // const index = array.indexOf(5);
