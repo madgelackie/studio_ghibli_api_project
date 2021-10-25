@@ -56,19 +56,6 @@ const Container = () => {
 //     return ({id:person.id, name:person.name, films:person.films})
 // })
 
-
-
-    
-
-// const peopleWithSpeciesDetail = (species, people) => {
-    //     const peopleWithSpecies = people.map(() => {
-    //         people.species === "https://ghibliapi.herokuapp.com/species/<speciesid>"
-
-    //         species.name
-    //     })
-
-    // }
-
 // const experiment = people.find(person => person.id === "267649ac-fb1b-11eb-9a03-0242ac130003")
 // console.log(experiment.species)
 
@@ -94,24 +81,6 @@ const Container = () => {
         const filteredWatchArray = watchList.filter(watchFilm => watchFilm.id !== seenObjectID)
         setWatchList(filteredWatchArray)
         }
-
-    
-    // To remove from watchlist:
-    // 
-    // 1. First, take the Seen film and extract id into variable.  
-    // Then find the object in watchlist array which matches the object being sought(i.e just added to seenList)
-        // 2. find that objects index Number
-        // 3. use .splice(index, 1) to remove it.
-        // 4. re-render watchList component (so us setWatchList)
-
-        
-    // const seenObject = 
-
-    // const removeFromWatchList =  (seenList) => {seenList.title === watchList.title
-    // const index = array.indexOf(5);
-    // if (index > -1) {
-    //   array.splice(index, 1);
-    // }
 
     return (
         <div id="container-grid">
