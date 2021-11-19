@@ -9,9 +9,15 @@ User can select films to add to their watch list.  Once seen, the user can add t
 
 API source: <https://ghibliapi.herokuapp.com/>
 
-Built using ⚛️React.
+Built using ⚛️ React.
 
 To open:
+
+In the project directory run:
+
+`npm start`
+
+Open [http://localhost:3000](http://localhost:3000) to view in the browser.
 
 
 
