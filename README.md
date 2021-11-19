@@ -13,7 +13,7 @@ Built using ⚛️ React.
 
 To open:
 
-In the terminal or shell, whilst in the project directory run:
+In the terminal, whilst in the project directory run:
 
 `npm start`
 
