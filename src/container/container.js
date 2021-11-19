@@ -47,24 +47,6 @@ const Container = () => {
         .then(species => setSpecies(species))
     }
 
-// this function works to return people in films but creates an infinte re-render if i set it as state and use as props and pass through to filmDetail.  
-// const peopleInFilms = people.filter(person => person.films[0] === selectedFilm.url)
-// console.log(peopleInFilms)
-
-// This makes shorter people objects, with fewer key:value pairs.
-// const newPeopleObject = people.map((person) => {
-//     return ({id:person.id, name:person.name, films:person.films})
-// })
-
-// const experiment = people.find(person => person.id === "267649ac-fb1b-11eb-9a03-0242ac130003")
-// console.log(experiment.species)
-
-// const experiment = people.filter(function (person) 
-//     {person.films.includes ("https://ghibliapi.herokuapp.com/films/dc2e6bd1-8156-4886-adff-b39e6043af0c")})
-// console.log(experiment)
-
-// const newPeopleList = people.map(person => person.species = species.find(species => species.url === person.species))
-
     const onFilmSelected = (film) => {
         setSelectedFilm(film)
     } 
